@@ -37,9 +37,9 @@
       let factText = document.querySelector('#factText')
       let numberInput = document.querySelector('#numberInput')
       numberInput.addEventListener('input', getFactFetch);
-      function getFactFetch() {
+      async function  getFactFetch() {
         let number = numberInput.value;
-        fetch('http://numbersapi.com/' + number)
+        await fetch('http://numbersapi.com/' + number)
           .then(res => res.text())
           .then(data => {
             if (number != '') {
@@ -47,7 +47,7 @@
               factText.innerText = data;
             }
           })
-          .catch(err => console.log(err));
+        .catch(err => console.log(err));
       }
     </script>
   </body>
