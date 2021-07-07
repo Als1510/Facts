@@ -39,7 +39,7 @@
       numberInput.addEventListener('input', getFactFetch);
       async function  getFactFetch() {
         let number = numberInput.value;
-        await fetch('http://numbersapi.com/' + number)
+        await fetch('https://numbersapi.com/' + number)
           .then(res => res.text())
           .then(data => {
             if (number != '') {
